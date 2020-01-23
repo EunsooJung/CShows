@@ -29,6 +29,8 @@ CREATE TABLE artists
 	id int NOT NULL AUTO_INCREMENT,
 	artist_name varchar(255) NOT NULL,
 	artist_type varchar(255) NOT NULL,
+  index(id),
+  index(name),
 	PRIMARY KEY (id)
 	-- FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -38,12 +40,12 @@ CREATE TABLE shows
 	id int NOT NULL AUTO_INCREMENT,
 	show_name varchar(255) NOT NULL,
 	show_type varchar(255) NOT NULL,
-  show_venue varchar(255) NOT NULL,
-  show_Date DATE NOT NULL,
-  show_genre varchar(255) NOT NULL,
+	show_venue varchar(255) NOT NULL,
+	show_Date DATE NOT NULL,
+	show_genre varchar(255) NOT NULL,
 	PRIMARY KEY (id),
-  index(id),
-  index(show_name),
+	index(id),
+	index(show_name),
 	FOREIGN KEY (id) REFERENCES tickets(id),
-  FOREIGN KEY (id) REFERENCES artists(id)
+	FOREIGN KEY (id) REFERENCES artists(id)
 );
