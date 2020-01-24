@@ -1,0 +1,28 @@
+{
+  "name": "cShows",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scape.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EunsooJung/CShows.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^0.20.0",
+    "express-handlebars": "^3.1.0",
+    "passport": "^0.4.1",
+    "request": "^2.88.0",
+    "selenium-webdriver": "^4.0.0-alpha.5"
+  },
+  "bugs": {
+    "url": "https://github.com/EunsooJung/CShows/issues"
+  },
+  "homepage": "https://github.com/EunsooJung/CShows#readme"
+}
