@@ -11,6 +11,7 @@ app.use(express.static(process.cwd() + '/public'));
 
 // setup body-parser
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
 
 // setup method-override
 app.use(methodOverride('_method'));
