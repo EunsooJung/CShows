@@ -1,8 +1,11 @@
+/**
+ * Node.js Program Lifecycle
+ * server.js --> Start Script --> Parse Code, Register Variables & Functions --> Event loop (The node Appliction) --> Keep on running as long as there are event listeners registerd
+ */
 const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
-var methodOverride = require("method-override")
-
+var methodOverride = require('method-override');
 
 // setup middleware
 const app = express();
