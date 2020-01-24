@@ -1,2 +1,6 @@
 node_modules
+<<<<<<< HEAD
 yarn.lock
+=======
+.DS_Store
+>>>>>>> ccb36fe6fe1dea68383ec8c245fbddbd6155c9d7

@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 
+
 // setup middleware
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,5 +21,5 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 app.listen(PORT, function() {
-  console.log('Burger Server listening on: http://localhost: ' + PORT);
+  console.log('Server listening on: http://localhost: ' + PORT);
 });
