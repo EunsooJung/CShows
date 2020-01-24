@@ -20,5 +20,5 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 app.listen(PORT, function() {
-  console.log('Burger Server listening on: http://localhost: ' + PORT);
+  console.log('Server listening on: http://localhost: ' + PORT);
 });
