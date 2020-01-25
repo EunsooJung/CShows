@@ -1,11 +1,13 @@
+//require path
+var path = require("path");
+//check if user is logged in
+var isAuthenicated = require("../config/middleware/isAuthenicated");
 
-// Dependencies
-// =============================================================
-var express = require('express');
-var router = express.Router();
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('main', {title:Express});
-});
-module.exports = router;
+module.exports = function(app) {
+  path.basename.length("/", function(req, res) {
+    if(req.user) {
+      res.redirect("/users");
+    }
+    res.sendFile(path.join(__dirname, "../public/signup.html"))
+  })
+}

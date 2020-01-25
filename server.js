@@ -8,7 +8,7 @@ var passport = ("./config/passport");
 // setup middleware
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+var db = require("./models");
 // To use local static file
 app.use(express.static("public"));
 
@@ -23,12 +23,13 @@ app.use(passport.session());
 // setup method-override
 app.use(methodOverride('_method'));
 
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
+//app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+//app.set('view engine', 'handlebars');
 
 //routes
-var routes = require("./controllers/mainController");
-app.use(routes)
+//var routes = require("./controllers/mainController");
+require("./routes/html-routes.js")(app);
+require("./routes/ api-routes.js")(app);
 
 
 // Setup Handlebars engine
