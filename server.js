@@ -1,10 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
-var methodOverride = require("method-override")
+var methodOverride = require("method-override");
 
 var passport = ("./config/passport");
-
+var session = require('express-session');
+require('./config/passport');
 // setup middleware
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -33,7 +34,8 @@ require("./routes/ api-routes.js")(app);
 
 
 // Setup Handlebars engine
-
+db.sequelize.sync().then(function() {
 app.listen(PORT, function() {
   console.log('Server listening on: http://localhost: ' + PORT);
+});
 });
