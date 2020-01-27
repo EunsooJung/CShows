@@ -31,4 +31,16 @@ router.get('/user/login', (req, res, next) => {
   });
 });
 
+router.get('/signup', (req, res, next) => {
+  const tickets = adminData.tickets;
+  res.render('signup', {
+    prods: tickets,
+    pageTitle: 'Sign Up',
+    path: '/signup',
+    hasProducts: tickets.length > 0,
+    activeSignup: true,
+    loginCSS: true
+  });
+});
+
 module.exports = router;
