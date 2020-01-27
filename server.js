@@ -2,29 +2,38 @@
  * Node.js Program Lifecycle
  * server.js --> Start Script --> Parse Code, Register Variables & Functions --> Event loop (The node Appliction) --> Keep on running as long as there are event listeners registerd
  */
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars');
-var methodOverride = require('method-override');
+const ehbs = require('express-handlebars');
 
-// setup middleware
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// To use local static file
-app.use(express.static(process.cwd() + '/public'));
+// Register Handlebars Engine
+app.engine(
+  'hbs',
+  ehbs({
+    layoutsDir: 'views/layouts/',
+    defaultLayout: 'main-layout',
+    extname: 'hbs'
+  })
+);
+app.set('view engine', 'hbs');
+app.set('views', 'views');
+// add purchase ticket
+const adminData = require('./routes/ticket');
+// import shop routes
+const userRoutes = require('./routes/user');
 
-// setup body-parser
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.json());
+// express static
+app.use(express.static(path.join(__dirname, 'public')));
 
-// setup method-override
-app.use(methodOverride('_method'));
+app.use('/user', adminData.routes);
+app.use(userRoutes);
 
-// Setup Handlebars engine
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
-
-app.listen(PORT, function() {
-  console.log('Server listening on: http://localhost: ' + PORT);
+app.use((req, res, next) => {
+  res.status(404).render('404', { pageTitle: 'Page Not Found' });
 });
+
+app.listen(2000);
