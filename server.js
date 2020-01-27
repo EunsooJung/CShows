@@ -19,8 +19,8 @@ app.use(express.json());
 
 //passport
 app.use(session({ secret: "secret", resave:true, saveUninitialized: true}));
-app.use(passport.initialize());
-app.use(passport.session());
+//app.use(passport.initialize());
+//app.use(passport.session());
 // setup method-override
 app.use(methodOverride('_method'));
 
@@ -30,7 +30,7 @@ app.use(methodOverride('_method'));
 //routes
 //var routes = require("./controllers/mainController");
 require("./routes/html-routes.js")(app);
-require("./routes/ api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 
 // Setup Handlebars engine

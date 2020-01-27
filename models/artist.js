@@ -28,8 +28,8 @@ module.exports = function(sequelize, DataTypes) {
   };
   // Hooks are automatic methods that run during various phases of the Artist Model lifecycle
   // In this case, before a Artist is created, we will automatically hash their password
-  Artist.addHook("beforeCreate", function(Artist) {
-    Artist.password = bcrypt.hashSync(Artist.password, bcrypt.genSaltSync(10), null);
+  Artist.addHook("beforeCreate", function(artist) {
+    artist.password = bcrypt.hashSync(artist.password, bcrypt.genSaltSync(10), null);
   });
   return Artist;
 };
