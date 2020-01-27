@@ -10,6 +10,7 @@ CREATE TABLE users (
   location VARCHAR(100) NOT NULL,
   PRIMARY KEY (id)
 );
+
 CREATE TABLE artists
 (
 	id INT NOT NULL AUTO_INCREMENT,
@@ -32,15 +33,15 @@ CREATE TABLE shows
 	PRIMARY KEY (id)
 );
 
-
 CREATE TABLE tickets
 (
 	id INT NOT NULL AUTO_INCREMENT,
     artist_name INT,
     show_id INT NOT NULL,
-	PRIMARY KEY (id),
-##	index(id),
+	  PRIMARY KEY (id),
     FOREIGN KEY (artist_name) REFERENCES artists(id),
-	FOREIGN KEY (show_id) REFERENCES shows(id)
+	  FOREIGN KEY (show_id) REFERENCES shows(id)
 );
+
+
 
