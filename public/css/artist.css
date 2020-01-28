@@ -1,0 +1,87 @@
+.show_artist {
+    font-family: sans-serif;
+    background-position: top;
+    background-size: 100%;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #e70000ea 0%, #ec029a 5%, #4202e5 45%,#0509fbdd 60%,rgb(0, 36, 144) 90%);
+    width: 960;
+    height: 200px;
+    border-radius: 15px;
+    -webkit-filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
+              filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3)); 
+    display: block;
+    margin: 10% auto auto auto;
+    color: #fff;;
+  }
+
+  .show_date {
+    margin: 15px;
+    -webkit-filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
+              filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3)); 
+  }
+  
+  .show_date .show_day{
+    font-size: 80px;
+    float: left;
+  }
+  
+  .show_date .show_month-and-time {
+    float: left;
+    margin: 15px 0 0 0;
+    font-weight: bold;
+  }
+  
+  .artist_name {
+    font-size: 30px;
+    margin: 10px 100px 0 40px;
+    float: left;
+    font-weight: bold;
+    -webkit-filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
+              filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3)); 
+  }
+  
+  .show_location {
+    float: left;
+    margin: 110px 0 0 300px;
+    font-size: 30px;
+    font-weight: bold;
+    -webkit-filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
+              filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3)); 
+  }
+
+  .show_cta .buy_ticket {
+    position: absolute;
+    top: 60px;
+    height: 80px;
+    width: 320px;
+    right: 15px;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #436ea5;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: #fff;
+    text-decoration: none;
+    -webkit-filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
+              filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3)); 
+  }
+  .show_location::before {
+    background-image: url('https://www.billboard.com/files/styles/article_main_image/public/media/Deafheaven-press-by-Shane-Gardner-bb2-2019-billboard-1548.jpg');
+    background-size: 150px 150px;
+    border-radius: 50%;
+    width: 150px; 
+    height: 150px;
+    content:"";
+    display: inline-block;
+    left:10px;
+    position: absolute;
+    left: -160px;
+    bottom: 5px;
+    -webkit-filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
+              filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3)); 
+  }
+  .small {
+    font-weight: 200;
+  }
+  
