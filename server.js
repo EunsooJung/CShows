@@ -5,9 +5,14 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
+const session = require('express-session');
+
 const ehbs = require('express-handlebars');
 
 const app = express();
+
+// Requiring our models for syncing
+var db = require('./models');
 
 // Register Handlebars Engine
 app.engine(
@@ -36,4 +41,13 @@ app.use((req, res, next) => {
   res.status(404).render('404', { pageTitle: 'Page Not Found' });
 });
 
-app.listen(2000);
+var PORT = process.env.PORT || 8080;
+
+// Starts the server to begin listening
+// =============================================================
+
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log('App listening on PORT ' + PORT);
+  });
+});
