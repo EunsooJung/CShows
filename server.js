@@ -31,17 +31,6 @@ app.use(session({ secret: 'secret', resave: true, saveUninitialized: true }));
 //app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 //app.set('view engine', 'handlebars');
 
-//routes
-//var routes = require("./controllers/mainController");
-require('./routes/html-routes.js')(app);
-require('./routes/api-routes.js')(app);
-
-// Setup Handlebars engine
-db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
-    console.log('Server listening on: http://localhost: ' + PORT);
-  });
-=======
 const ehbs = require('express-handlebars');
 
 const app = express();
@@ -71,7 +60,6 @@ app.use(userRoutes);
 
 app.use((req, res, next) => {
   res.status(404).render('404', { pageTitle: 'Page Not Found' });
->>>>>>> D01-SetupServer
 });
 
 app.listen(2000);
