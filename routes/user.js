@@ -9,27 +9,27 @@ const router = express.Router();
 
 router.get('/', (req, res, next) => {
   const tickets = adminData.tickets;
-  res.render('userDashboard', {
-    prods: tickets,
-    pageTitle: 'User Dashboard',
-    path: '/',
-    hasProducts: tickets.length > 0,
-    activeUserDashboard: true,
-    ticketCSS: true
-  });
-});
-
-router.get('/user/login', (req, res, next) => {
-  const tickets = adminData.tickets;
   res.render('login', {
     prods: tickets,
     pageTitle: 'User Login',
-    path: '/user/login',
-    hasProducts: tickets.length > 0,
-    activeLogin: true,
-    loginCSS: true
+    path: '/',
+    // hasProducts: tickets.length > 0,
+    // activeUserDashboard: true,
+    // ticketCSS: true
   });
 });
+
+// router.get('/user/login', (req, res, next) => {
+//   const tickets = adminData.tickets;
+//   res.render('login', {
+//     prods: tickets,
+//     pageTitle: 'User Login',
+//     path: '/user/login',
+//     hasProducts: tickets.length > 0,
+//     activeLogin: true,
+//     loginCSS: true
+//   });
+// });
 
 router.get('/signup', (req, res, next) => {
   const tickets = adminData.tickets;
